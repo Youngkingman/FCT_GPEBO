@@ -1,4 +1,5 @@
-function [dot_Y_1, dot_Omega_1, dot_omega_1, dot_hat_theta_1] = FCT_GPEBO_agent1_func(y_1,Y_1, Omega_1,Psi_1,Delta_1,omega_1,Gamma_1,hat_theta_1)
+function [dot_Y_1, dot_Omega_1, dot_omega_1, dot_hat_theta_1] = ...
+FCT_GPEBO_agent1_func(y_1,Y_1, Omega_1,Psi_1,Delta_1,omega_1,Gamma_1,hat_theta_1)
 %{
     inputs: Y_1, 9a
             y_1, 9a

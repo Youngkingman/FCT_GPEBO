@@ -1,10 +1,16 @@
-function omega_1c = clipping_func(omega_1)
-% part of equation(12)
+function omega_c = clipping_func(omega,id)
+% part of equation(12) or equation(25)
     global mu_1;
-    if omega_1 < 1 - mu_1
-        omega_1c = omega_1;
+    global mu_2;
+    
+    mu = mu_1;
+    if id == 2
+        mu = mu_2;
+    end
+    if omega < 1 - mu
+        omega_c = omega;
     else
-        omega_1c = 1 - mu_1;
+        omega_c = 1 - mu;
     end
 end
 
