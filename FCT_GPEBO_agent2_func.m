@@ -15,6 +15,6 @@ global A; %  动力学本身要求全局信息了
 dot_Phi_2 = A * Phi_2;
 dot_Y_2 = -lambda_2 * Y_2 + lambda_2 * Psi_2' * y_2;
 dot_Omega_2 = -lambda_2 * Omega_2 + lambda_2 * (Psi_2' * Psi_2);
-dot_omega_2 = -gamma_2 * (Delta_2^2)*omega_2;
+dot_omega_2 = -gamma_2 * (Delta_2^2) * omega_2;
 dot_hat_theta_2 = gamma_2 * Delta_2 * (Gamma_2 - Delta_2 * hat_theta_2);
 end

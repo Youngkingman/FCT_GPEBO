@@ -20,10 +20,10 @@ global C_22;
 
 global hat_theta_1_0;
 global hat_theta_2_0;
-global bar_x_0;
 
 global init_conds;
 global tspan;
+
 
 % the global state matrices
 A = [   -1,        0,    0,    0,   0, 0;
@@ -63,7 +63,11 @@ mu_2 = 0.1;
 
 % the initial values
 n1 = 2; n2 = 4;
-bar_x_0 = [1 3 -2 -3 -1 2]'; % arxiv的预印本有问题维度不对，这条件是我猜的
+
+% the state inital condition
+bar_x_0 = [1 3 -2 -3 -1 2]'; 
+% x_0 = inv(mathcal_T)*bar_x_0 ;
+x_0 = bar_x_0;
 
 % agent1
     Y_1_0 = zeros(n1,1);
@@ -78,11 +82,22 @@ bar_x_0 = [1 3 -2 -3 -1 2]'; % arxiv的预印本有问题维度不对，这条�
     omega_2_0 = 1;
     hat_theta_2_0 = zeros(n2, 1);
 
-% set the fucking intial values
+% set the intial values of agent 1
 init_conds = zeros(76,1);
-% init_conds(1:2) = 
+init_conds(1:2) = x_0(1:2);
+init_conds(3:4) = Y_1_0;
+init_conds(5:8) = reshape(Omega_1_0,[4,1]);
 init_conds(9) = omega_1_0; 
+init_conds(10:11) = hat_theta_1_0;
+
+% set the intial values of agent 2
+init_conds(12:47) = reshape(Phi_2_0,[36,1]);
+init_conds(48:51) = x_0(3:6);
+init_conds(52:55) = Y_2_0;
+init_conds(56:71) = reshape(Omega_2_0,[16,1]);
+init_conds(72) = omega_2_0;
+init_conds(73:76) = hat_theta_2_0;
 
 sim_time = 10;
-time_step = 0.1;
- tspan = (0:time_step:sim_time);
+time_step = 0.01;
+tspan = (0:time_step:sim_time);

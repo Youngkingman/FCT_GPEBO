@@ -1,4 +1,4 @@
-function [py,Psi_2]= perturbedLRE(Phi,y_2,hat_theta_FCT_1)
+function [py, Psi_2]= perturbedLRE(Phi,y_2,hat_theta_FCT_1)
 global C_21;
 global C_22;
 
