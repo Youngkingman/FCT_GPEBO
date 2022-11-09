@@ -29,7 +29,7 @@ xdot = zeros(76,1);
     FCT_GPEBO_agent1_func(y_1,Y_1, Omega_1,Psi_1,Delta_1,omega_1,Gamma_1,hat_theta_1);
     
     % update the dynamics(9)
-    xdot(x_1_st:x_1_st + n1 - 1) = A_11*x(x_1_st:x_1_st + n1 - 1);
+    xdot(x_1_st:x_1_st + n1 - 1) = A_11 * x_1;
     xdot(Y_1_st:Y_1_st + n1 - 1) = dot_Y_1;
     xdot(Omega_1_st:Omega_1_st + n1 * n1 - 1) = reshape(dot_Omega_1,[n1*n1,1]);
     xdot(omega_1_st) = dot_omega_1;

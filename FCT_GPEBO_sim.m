@@ -1,8 +1,12 @@
  
 %% set the simulation time
+close all;
+clear
+
  FCT_GPEBO_settings;
  global tspan;
  global init_conds;
+ global mathcal_T;
 
  %% run simulation
 [t,y]=ode45(@FCT_GPEBO_func, tspan, init_conds);
@@ -19,6 +23,7 @@ x_1 = y(:, 1:2);
 x_2 = y(:,48:51);
 
 %% 出图
+
 % fig1
 figure();
 plot(t,hat_x_1 - x_1);
@@ -27,6 +32,6 @@ plot(t,hat_x_2 - x_2);
 
 % fig2
 figure();
-plot(t, [x_1, x_2]);
+plot(t, (mathcal_T * [x_1, x_2]')');
 figure();
-plot(t, [hat_x_1, hat_x_2]);
+plot(t, (mathcal_T * [hat_x_1, hat_x_2]')');

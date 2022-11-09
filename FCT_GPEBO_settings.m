@@ -16,13 +16,11 @@ global C_11;
 global C_21;
 global C_22;
 
-
-
-hat_theta_1_0;
-hat_theta_2_0;
-
 global init_conds;
 global tspan;
+
+global hat_theta_1_0;
+global hat_theta_2_0;
 
 
 % the global state matrices
@@ -66,7 +64,7 @@ n1 = 2; n2 = 4;
 
 % the state inital condition
 bar_x_0 = [1 3 -2 -3 -1 2]'; 
-x_0 = inv(mathcal_T)*bar_x_0 ;
+x_0 = inv(mathcal_T)*bar_x_0;
 % x_0 = bar_x_0;
 
 % agent1
@@ -97,6 +95,7 @@ init_conds(52:55) = Y_2_0;
 init_conds(56:71) = reshape(Omega_2_0,[16,1]);
 init_conds(72) = omega_2_0;
 init_conds(73:76) = hat_theta_2_0;
+
 
 % simulation settings
 sim_time = 10;
