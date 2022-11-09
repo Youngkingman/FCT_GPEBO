@@ -1,7 +1,5 @@
 function xdot = FCT_GPEBO_func(t,x)
 xdot = zeros(76,1);
-global hat_x1_t;
-global hat_x2_t;
 %% simulation for agent 1
     global C_11;
     global A_11;

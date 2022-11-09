@@ -7,7 +7,7 @@ function [hat_x_1,hat_x_2] = cal_hat_x_vec(Phi, hat_theta_1, omega_1, hat_theta_
     hat_x_1 = zeros(length(t), 2);
     hat_x_2 = zeros(length(t), 4);
     
-    for i=1:length(t)
+    for i = 1:length(t)
         % calculate hat_x_1
         Psi_1_i = C_11 * expm(A_11 * t(i)); 
         omega_1_c = clipping_func(omega_1(i),1);

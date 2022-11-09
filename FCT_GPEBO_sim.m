@@ -19,7 +19,14 @@ x_1 = y(:, 1:2);
 x_2 = y(:,48:51);
 
 %% 出图
+% fig1
 figure();
 plot(t,hat_x_1 - x_1);
 figure();
 plot(t,hat_x_2 - x_2);
+
+% fig2
+figure();
+plot(t, [x_1, x_2]);
+figure();
+plot(t, [hat_x_1, hat_x_2]);
