@@ -51,8 +51,8 @@ C_21 = C(3:3,1:2);
 C_22 = C(3:3,3:6);
 
 % the tunning parameters
-lambda_1 = 10;
-gamma_1  = 15;
+lambda_1 = 1;
+gamma_1  = 5;
 mu_1     = 0.05;
 
 lambda_2 = 0.8;
